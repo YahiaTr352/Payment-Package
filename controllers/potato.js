@@ -272,8 +272,8 @@ const paymentData = require("../models/paymentDataModel");
 const getEncryptionKeyModel = require("../models/keysModel");
 const EncryptionKeyModel = require("../models/keysModel");
 
-// const BASE_API_URL = "https://projectone-wqlf.onrender.com";
-const BASE_API_URL = "http://localhost:5000";
+const BASE_API_URL = "https://projectone-wqlf.onrender.com";
+// const BASE_API_URL = "http://localhost:5000";
 // ======== API Handlers ========
 
 // const getToken = async (req, res) => {
@@ -1430,7 +1430,7 @@ const getUrl = async (req, res) => {
     });
 
 
-    const baseUrl = `http://localhost:3001`;
+    const baseUrl = "https://payment-package.onrender.com";
     const redirectUrl = `${baseUrl}/api/clients/customerPhone-page/${publicID_phonePage}`;
     return res.json({ url: redirectUrl });
 
