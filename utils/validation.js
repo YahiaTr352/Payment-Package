@@ -42,7 +42,7 @@ const validateMerchantPhoneNumber = (phoneNumber) => {
 
 const verifyToken = (token) => {
     try {
-        const decoded = jwt.verify(token, "secretKey");
+        const decoded = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
         return { valid: true, decoded };
     } catch (error) {
         return { valid: false, error };

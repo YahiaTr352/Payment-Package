@@ -1,5 +1,3 @@
-// middlewares/userAgentFilter.js
-
 const suspiciousAgents = [
   "curl", "python", "sqlmap", "nmap", "wget", "fuzzer", "libwww", "scan",
   "nikto", "acunetix", "paros", "netsparker", "nessus", "hydra", "zaproxy"

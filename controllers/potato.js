@@ -23,7 +23,7 @@ const paymentData = require("../models/paymentDataModel");
 const getEncryptionKeyModel = require("../models/keysModel");
 const EncryptionKeyModel = require("../models/keysModel");
 
-const BASE_API_URL = "https://projectone-wqlf.onrender.com";
+const BASE_API_URL = process.env.BASE_SYRITAL_URL;
 
 const saveServer = (req,res) => {
     try{
@@ -580,7 +580,7 @@ const getUrl = async (req, res) => {
     });
 
 
-    const baseUrl = "https://payment-package.onrender.com";
+    const baseUrl = process.env.BASE_PACKAGE_URL;
     const redirectUrl = `${baseUrl}/api/clients/customerPhone-page/${publicID_phonePage}`;
     return res.json({ url: redirectUrl });
 
@@ -594,7 +594,6 @@ const customerPhonePage = async (req, res) => {
   const { publicID } = req.params;
 
   try {
-    // البحث في قاعدة البيانات عن المعاملة التي تحتوي على الـ publicID
     const transaction = await EncryptionKeyModel.findOne({
       $or: [
         { "publicIDs.phonePage": publicID },
